@@ -1,4 +1,4 @@
-import { ADD_TO_CART } from "./constant";
+import { ADD_TO_CART, REMOVE_TO_CART, EMPTY_CART } from "./constant";
 
 export const cartData = (data = [], action) => {
   //   if (action.type === ADD_TO_CART) {
@@ -11,8 +11,20 @@ export const cartData = (data = [], action) => {
   switch (action.type) {
     case ADD_TO_CART:
       // Logic for add to cart
-      console.log("ADD_TO_CART", action);
+      console.log("ADD_TO_CART Reducer", action);
       return [action.data, ...data];
+
+    case REMOVE_TO_CART:
+      // Logic for remove from cart
+      console.log("REMOVE_FROM_CART Reducer", action);
+      data.length = data.length ? data.length - 1 : [];
+      return [...data];
+
+    case EMPTY_CART:
+      // Logic for empty cart
+      console.log("EMPTY_CART Reducer", action);
+      data = [];
+      return [...data];
 
     default:
       return data;
