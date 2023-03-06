@@ -12,9 +12,9 @@ export const cartData = (data = [], action) => {
     case ADD_TO_CART:
       // Logic for add to cart
       console.log("ADD_TO_CART", action);
-      return 1 + 1;
+      return [action.data, ...data];
 
     default:
-      return "no action matched";
+      return data;
   }
 };
