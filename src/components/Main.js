@@ -1,8 +1,11 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addToCart, removeFromCart, emptyCart } from "../redux/action";
+import { productList } from "../redux/productAction";
 
 function Main() {
   const dispatch = useDispatch();
+  const productDataResult = useSelector((state) => state.productData);
+  console.log("Data in main component", productDataResult);
   const product = {
     name: "GT Master",
     color: "white",
@@ -39,6 +42,14 @@ function Main() {
         }}
       >
         Empty Cart
+      </button>
+
+      <button
+        onClick={() => {
+          dispatch(productList());
+        }}
+      >
+        Get Product List
       </button>
     </div>
   );

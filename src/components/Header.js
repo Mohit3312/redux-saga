@@ -2,8 +2,8 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 const Header = () => {
-  const result = useSelector((state) => state.cartData);
-  console.log(result);
+  const cartDataResult = useSelector((state) => state.cartData);
+  console.log("Data in header component", cartDataResult);
   return (
     <div
       className="header"
@@ -13,7 +13,7 @@ const Header = () => {
         className="cart-div"
         style={{ float: "right", margin: "25px", position: "relative" }}
       >
-        <span>{result.length}</span>
+        <span>{cartDataResult.length}</span>
         <i className="fa-solid fa-cart-shopping fa-3x"></i>
       </div>
     </div>

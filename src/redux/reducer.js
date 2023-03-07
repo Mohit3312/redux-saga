@@ -17,8 +17,9 @@ export const cartData = (data = [], action) => {
     case REMOVE_TO_CART:
       // Logic for remove from cart
       console.log("REMOVE_FROM_CART Reducer", action);
-      data.length = data.length ? data.length - 1 : [];
-      return [...data];
+      // data.length = data.length ? data.length - 1 : [];
+      // return [...data];
+      return [...data.slice(0, data.length - 1)];
 
     case EMPTY_CART:
       // Logic for empty cart
