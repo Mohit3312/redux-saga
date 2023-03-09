@@ -5,7 +5,7 @@ import { productList } from "../redux/productAction";
 function Main() {
   const dispatch = useDispatch();
   const productDataResult = useSelector((state) => state.productData);
-  console.log("Data in main component", productDataResult);
+  console.log("Data in main component from saga", productDataResult);
   const product = {
     name: "GT Master",
     color: "white",
