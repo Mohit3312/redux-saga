@@ -33,11 +33,11 @@ function Main() {
       <div
         className="product-container"
         style={{
-          marginTop: "50px",
+          margin: "50px",
           display: "flex",
           flexWrap: "wrap",
           justifyContent: "space-evenly",
-          alignItems: "center",
+          alignItems: "space-evenly",
         }}
       >
         {productDataResult.map((item) => (
@@ -46,9 +46,10 @@ function Main() {
             className="product-item"
             style={{
               display: "flex",
-              alignItems: "center",
+              alignItems: "space-evenly",
               flexDirection: "column",
               border: "2px solid black",
+              margin: "20px",
               padding: "10px",
               borderRadius: "15px",
             }}
