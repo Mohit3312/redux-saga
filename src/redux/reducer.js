@@ -12,14 +12,16 @@ export const cartData = (data = [], action) => {
     case ADD_TO_CART:
       // Logic for add to cart
       console.log("ADD_TO_CART Reducer", action);
-      return [action.data, ...data];
+      return [...data, action.data];
 
     case REMOVE_TO_CART:
       // Logic for remove from cart
       console.log("REMOVE_FROM_CART Reducer", action);
       // data.length = data.length ? data.length - 1 : [];
+      const remainingItem = data.filter((item) => item.id !== action.data);
       // return [...data];
-      return [...data.slice(0, data.length - 1)];
+      // return [...data.slice(0, data.length - 1)];
+      return [...remainingItem];
 
     case EMPTY_CART:
       // Logic for empty cart
